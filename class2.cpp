@@ -96,3 +96,44 @@ int main(){
 
 
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <=100; i++) {
+        cout << i<< " ";
+        if (i % 2 == 0) {
+            cout << i<< " is even." << " ";
+        } else {
+            cout << i<< " is odd " << " ";
+        }
+    }
+}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num[6];
+    cout << "Enter 6 numbers:" << endl;
+    for (int i = 0; i < 6; i++) {
+        cout << "numbers [" << i << "]: ";
+        cin >> num[i];
+    }
+
+    for (int i = 0; i < 6; i++) {
+
+        if (i % 2 == 0) {
+            num[i] *= 2;
+        }
+        else {
+            num[i] *= 3;
+        }
+        if (num[i] % 5 == 0) {
+            cout << "index " << i << ": " << num[i] << " is divisible by 5" << endl;
+        } else {
+            cout << "index " << i << ": " << num[i] << " is not divisible by 5" << endl;
+        }
+    }
+
+    return 0;
+}
