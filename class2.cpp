@@ -137,3 +137,18 @@ int main() {
 
     return 0;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <=100; i++) {
+        cout << i<< " ";
+        if (i % 2 == 0) {
+            cout << i<< " is even." << " ";
+            break;
+        } else {
+            cout << i<< " is odd " << " ";
+            continue;
+        }
+    }
+}
