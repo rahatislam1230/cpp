@@ -141,4 +141,24 @@ int main() {
 
 
 }
+#include <iostream>
+using namespace std;
+int main() {
+    float cpga[3];
+    float lowestcgpa;
+    for(int i=0;i<3;i++){
+        cout<<"Enter student cpga:"<<endl;
+        cin>>cpga[i];
+    }
+    lowestcgpa = cpga[0];
+    for(int i=0;i<3;i++){
+        if(lowestcgpa>cpga[i]){
+            lowestcgpa=cpga[i];
+        }
+
+    }
+
+cout<<"lowestest cgpa"<<lowestcgpa;
+
+}
 
