@@ -115,3 +115,30 @@ int main() {
 
     return 0;
 }
+#include <iostream>
+using namespace std;
+int main() {
+    int intnum[4];
+    float floatnum[4];
+    float sum=0,avg,mult;
+    for(int i=0;i<4;i++){
+        cout<<"Enter a int number["<<i<<"] :"<<endl;
+        cin>>intnum[i];
+        sum+=i;
+        mult*=i;
+    }
+    for(int i=0;i<4;i++){
+        cout<<"Enter a floating number["<<i<<"] :"<<endl;
+        cin>>floatnum[i];
+        sum+=i;
+        mult*=i;
+    }avg=sum/8;
+
+        cout<<"here's the result's"<<endl;
+        cout<<"sum of the number "<<sum<<endl;
+        cout<<"multipication of the number"<<mult<<endl;
+        cout<<"avgerage of the number "<<avg<<endl;
+
+
+}
+
