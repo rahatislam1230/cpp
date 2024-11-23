@@ -71,3 +71,28 @@ int main() {
 
 
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int days[5];
+    float avg = 0, percentage;
+    cout << "Enter marks for 5 days: ";
+    for (int i = 0; i <5; i++) {
+        cin >> days[i];
+        avg += days[i];
+    }
+
+
+    avg /= 5;
+    percentage = (avg / 5) * 100;
+    if (percentage > 75) {
+        cout << "Good" << endl;
+    } else if (percentage >= 50) {
+        cout << "Average" << endl;
+    } else {
+        cout << "Bad" << endl;
+    }
+
+    return 0;
+}
