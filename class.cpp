@@ -180,3 +180,26 @@ int main() {
     }
 
 }
+#include <iostream>
+using namespace std;
+int main() {
+    int num[6];
+    for(int i =0;i<6;i++){
+        cout<<"Enter a number ["<<i<<"] :"<<endl;
+        cin>>num[i];
+    }
+    for(int i =0;i<6;i++){
+        if(num[i]%2==0){
+            num[i]*=2;
+        } else{
+            num[i]*=3;
+        }if(num[i]%5==0){
+            cout<<"the number is divisable by 5"<<endl;
+        }else{
+            cout<<"the number is not divisable by 5"<<endl;
+        }
+    }
+
+
+
+}
