@@ -203,3 +203,44 @@ int main() {
 
 
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of participants: ";
+    cin >> n;
+    if (n <= 0) {
+        cout << "Number of participants " << endl;
+        return 1;
+    }
+
+    float score [n];
+    float sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Enter the score [" << i << "]: ";
+        cin >> score[i];
+        sum += score[i];
+    }
+
+    float avg = sum / n;
+    float highestscore = score[0];
+    float lowestscore = score[0];
+
+    for (int i = 1; i < n; i++) {
+        if (score[i] > highestscore) {
+            highestscore = score[i];
+        }
+        if (score[i] < lowestscore) {
+            lowestscore = score[i];
+        }
+    }
+
+    cout << "*** Display ***" << endl;
+    cout << "The average score is: " << avg << endl;
+    cout << "The highest score is: " << highestscore << endl;
+    cout << "The lowest score is: " << lowestscore << endl;
+
+    return 0;
+}
