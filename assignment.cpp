@@ -9,8 +9,6 @@ int main() {
         cout<<"Your grade is A "<<endl;
     }else if (marks>=80){
         cout<<"Your grade is B "<<endl;
-    }else if (marks>=80){
-        cout<<"Your grade is B "<<endl;
     }else if (marks>= 70 && marks< 80){
         cout<<"Your grade is C "<<endl;
     }else if (marks>=60){
@@ -92,10 +90,10 @@ int main() {
         cin >> arry[i];
     }
     cout << "Reversed array: "<<endl;
-    for (int i = n - 1; i >= 0; i--)
+    for (int i = n - 1; i >= 0; i--){
         cout << arry[i] << endl;
-
-    return 0;
+        
+}
 }
 quetion 6.....
 #include <iostream>
@@ -247,10 +245,10 @@ int main() {
     for (int i = 0; i < n; i++) {
         cout << arry[i] <<endl;
     }
-    cout << endl;
 
     return 0;
 }
+
 
     
 
