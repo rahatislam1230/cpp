@@ -244,3 +244,27 @@ int main() {
 
     return 0;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numSubjects;
+    cout << "Enter the number of subjects: ";
+    cin >> numSubjects;
+
+    double cgpa[numSubjects], credits[numSubjects], totalCredits = 0, weightedSum = 0;
+
+    for (int i = 0; i < numSubjects; i++) {
+        cout << "Enter CGPA for subject " << i + 1 << ": ";
+        cin >> cgpa[i];
+        cout << "Enter credits for subject " << i + 1 << ": ";
+        cin >> credits[i];
+        weightedSum += cgpa[i] * credits[i];
+        totalCredits += credits[i];
+    }
+
+    double finalCGPA = weightedSum / totalCredits;
+    cout << "Final CGPA: " << finalCGPA << endl;
+
+    return 0;
+}
