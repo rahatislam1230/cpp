@@ -88,7 +88,7 @@ int main() {
     cin>>n;
     int arry[n];
     for (int i = 0; i < n; i++) {
-        cout << "Enter the array number [" << i << "]: ";
+        cout << "Enter the array number [" << i << "]: "<<endl;
         cin >> arry[i];
     }
     cout << "Reversed array: "<<endl;
@@ -139,6 +139,60 @@ int main() {
 
     return 0;
 }
+question 8....
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout<<"Enter the fibonacci number: "<<endl;
+    cin>>n;
+    if(n<=0){
+        cout<<"Invalid input"<<endl;
+        return 0;
+    }
+    int a = 0, b=1,fib=0;
+    if(n==1){
+        cout << "The" <<n<< "th Fibonacci number is: "<<a<< endl;
+    }else if(n==2){
+        cout << "The " << n << "th Fibonacci number is: " << b << endl;
+    }else{
+        for(int i=3;i<n;i++){
+            fib=a+b;
+            a=b;
+            b=fib;
+        }
+        cout << "The " << n << "th Fibonacci number is: " << b << endl;
+    }
+
+    return 0;
+}
+question 9.........
+#include <iostream>
+using namespace std;
+
+int main() {
+    double temp, converted;
+    char choice;
+    cout << "Enter 'C' for Celsius to Fahrenheit for 'F' or vice versa: ";
+    cin >> choice;
+
+    if (choice == 'C' || choice == 'c') {
+        cout << "Enter temperature in Celsius: "<<endl;
+        cin >> temp;
+        converted = (temp * 9/5) + 32;
+        cout << "Temperature in Fahrenheit: " << converted << endl;
+    } else if (choice == 'F' || choice == 'f') {
+        cout << "Enter temperature in Fahrenheit: "<<endl;
+        cin >> temp;
+        converted = (temp - 32) * 5/9;
+        cout << "Temperature in Celsius: " << converted << endl;
+    } else {
+        cout << "Invalid choice!" << endl;
+    }
+
+    return 0;
+}
 
 question 10.....
 #include <iostream>
@@ -151,5 +205,73 @@ int main() {
     cout << "ASCII value of : "<<int(a)<<endl;
     return 0;
 }
+question 11....
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num;
+    cout<<"Enter a double number: "<<endl;
+    cin>>num;
+    int intnum=int(num);
+    cout<<"Converted integer:"<<intnum<<endl;
+    intnum+=10;
+    cout<<"Resut after adding 10: "<<intnum<<endl;
+
+    return 0;
+}
+question 12......
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "give the size of the array: "<<endl;
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Size of the array must be a positive !" << endl;
+        return 0;
+    }
+    int arry[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Enter the array number [" << i << "]: "<<endl;
+        cin >> arry[i];
+    }
+    for (int i = 0; i < n; i += 2) {
+        if (arry[i] > 10) {
+            arry[i] = 0;
+        }
+    }
+    cout << "Modified array:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << arry[i] <<endl;
+    }
+    cout << endl;
+
+    return 0;
+}
+
+    
+
+question 13.....
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    cout << "Enter a number: "<<endl;
+    cin >> a;
+
+    cout << "prime number 1 and " << a << " are:" << endl;
+
+    for (int num = 1; num <= a; num++) {
+        if (num % 2 != 0) {
+            cout << num << endl;
+        }
+    }
+
+    return 0;
+}    
   
   
