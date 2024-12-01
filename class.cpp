@@ -212,7 +212,7 @@ int main() {
     cin >> n;
     if (n <= 0) {
         cout << "Number of participants " << endl;
-        return 1;
+        return 0;
     }
 
     float score [n];
