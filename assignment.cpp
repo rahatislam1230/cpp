@@ -257,19 +257,24 @@ question 13.....
 using namespace std;
 
 int main() {
-    int a;
-    cout << "Enter a number: "<<endl;
-    cin >> a;
-
-    cout << "prime number 1 and " << a << " are:" << endl;
-
-    for (int num = 1; num <= a; num++) {
-        if (num % 2 != 0) {
-            cout << num << endl;
+    int n;
+    cout << "Enter a number : "<<endl;
+    cin >> n;
+    cout << "Prime numbers between 1 and " << n << " are:" << endl;
+    for (int i = 2; i <= n; i++) {
+        bool isPrime = true;
+        for (int j = 2; j < i; j++) {
+            if (i % j == 0) {
+                isPrime = false; 
+                break; 
+            }
+        }
+        if (isPrime) {
+            cout << i << endl;
         }
     }
 
+    cout << endl;
     return 0;
-}    
-  
+}
   
