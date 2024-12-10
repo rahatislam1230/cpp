@@ -47,5 +47,16 @@ int main() {
     cin>>l>>b;
     cout<<l*b<<endl;
 }
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string str = "hello";
+    for(int i=0;i<str.size();++i){
+        cout<<str[i]<<endl;
+    }
+
+
+}
 
 
