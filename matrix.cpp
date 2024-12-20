@@ -173,3 +173,61 @@ int main(){
         }cout<<endl;
     }
 }
+#include <iostream>
+using namespace std;
+int main(){
+    int n,m;
+    cin>>n>>m;
+    int matrix1[n][m],matrix2[n][m],result[n][m];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout<<"Matrix first Elements:"<<endl;
+            cin>>matrix1[i][j];
+        }
+    }for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout<<"Matrix 2nd Elements:"<<endl;
+            cin>>matrix2[i][j];
+        }
+    }for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout<<matrix1[i][j]<<" ";
+        }cout<<endl;
+    }for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout<<matrix1[i][j]<<" ";
+        }cout<<endl;
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            for(int k=0;k<m;++k){
+            result[i][j]+=matrix1[i][k]*matrix2[k][j];}
+        }cout<<endl;
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+           cout<<result[i][j]<<" ";
+        }cout<<endl;
+    }
+    int x;
+    cout << "Enter the element to search for: ";
+    cin>>x;
+
+    bool flag = false;
+    for(int i =0; i<n; i++){
+        for(int j=0; j<m; j++){
+            if(result[i][j] == x){
+                flag = true;
+                break;
+            }
+        }
+        if(flag) break;
+    }
+
+    if(flag){
+        cout<<"Element "<<x<<" found in the matrix."<<endl;
+    } else{
+        cout<<"Element "<<x<<" not found in the matrix."<<endl;
+    }
+}
+
