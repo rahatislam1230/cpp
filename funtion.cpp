@@ -496,5 +496,20 @@ int main() {
     return 0;
 
 }
+#include <bits/stdc++.h>
+using namespace std;
+float faction(int n){
+    if(n<1){
+        return 1;
+    }
+    return n* faction(n-1);
+}
+int main() {
+   int a;
+   cin>>a;
+   cout<<"the factorial is "<<a<<"is "<<faction(a)<<endl;
+    return 0;
+}
+
 
 
