@@ -562,3 +562,12 @@ int main() {
    cout<<"the factorial is "<<add(x,y);
     return 0;
 }
+#include <bits/stdc++.h>
+using namespace std;
+int volume(double r,int h){
+    return(3.14*r*r*h)
+}
+int main() {
+   cout<<"the volume is "<<volume(3,3,3);
+    return 0;
+}
