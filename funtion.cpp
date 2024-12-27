@@ -525,4 +525,21 @@ int main() {
    cout<<"the factorial is "<<a<<"is "<<fib(a)<<endl;
     return 0;
 }
+#include <bits/stdc++.h>
+using namespace std;
+float fib(int n){
+    if(n<2){
+        return 1;
+    }
+    return fib(n-2)+ fib(n-1);
+}
+int add(int a,int b){
+    return a+b;
+}
+int main() {
+   int x,y;
+   cin>>x>>y;
+   cout<<"the factorial is "<<add(x,y);
+    return 0;
+}
 
