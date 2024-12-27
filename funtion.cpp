@@ -247,5 +247,214 @@ int main(){
     }
 
 }
+#include <bits/stdc++.h>
+using namespace std;
+int sum(int a,int b ){
+    int c = a+b;
+    return c;
+}
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the sum is "<<sum(x,y)<<endl;
+    return 0;
 
 
+}
+#include <bits/stdc++.h>
+using namespace std;
+int sum(int a,int b );
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the sum is "<<sum(x,y)<<endl;
+    return 0;
+}
+int sum(int a,int b){
+    int c=a+b;
+    return c;
+}
+#include <bits/stdc++.h>
+using namespace std;
+int sum(int a,int b ){
+    int c = a+b;
+    return c;
+}
+void g(){
+    cout<<"\n coded by rahat"<<endl;
+}
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the sum is "<<sum(x,y)<<endl;
+    g();
+    return 0;
+
+
+}
+#include <bits/stdc++.h>
+using namespace std;
+void swap(int a,int b ){
+    int temp =a;
+    a=b;
+    b=temp;
+
+}
+void g(){
+    cout<<"\n coded by rahat"<<endl;
+}
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+    swap(x,y);
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+
+    g();
+    return 0;
+
+
+}
+#include <bits/stdc++.h>
+using namespace std;
+void swap(int* a,int* b ){
+    int temp =*a;
+    *a=*b;
+    *b=temp;
+
+}
+void g(){
+    cout<<"\n coded by rahat"<<endl;
+}
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+    swap(&x,&y);
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+
+    g();
+    return 0;
+
+
+}
+#include <bits/stdc++.h>
+using namespace std;
+void swapRefernce(int &a,int &b ){
+    int temp = a;
+     a= b;
+     b=temp;
+
+}
+void g(){
+    cout<<"\n coded by rahat"<<endl;
+}
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+    swapRefernce(x,y) ;
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+
+    g();
+    return 0;
+
+
+}
+#include <bits/stdc++.h>
+using namespace std;
+int  product(int a,int b){
+    return a*b;
+
+}
+void g(){
+    cout<<"\n coded by rahat"<<endl;
+}
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the product is "<<product(x,y)<<endl;
+
+    g();
+    return 0;
+
+}
+#include <bits/stdc++.h>
+using namespace std;
+int  matrix(int a,int b){
+    cin>>a>>b;
+    int arry[a][b];
+    for(int i =0;i<a;++i){
+        for(int j=0;j<b;++j){
+            cout<<"Enter the element"<<endl;
+            cin>>arry[i][j];
+        }
+    }
+    for(int i =0;i<a;++i){
+        for(int j=0;j<b;++j){
+            cout<<arry[i][j]<<" ";
+        }cout<<endl;
+    }
+
+}
+void g(){
+    cout<<"\n coded by rahat"<<endl;
+}
+int main(){
+    int m,n;
+    cout<<"Enter the value of row and column"<<endl;
+    matrix(m,n);
+    return 0;
+
+}
+#include <bits/stdc++.h>
+using namespace std;
+
+void inputMatrix(int matrix[][100], int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << "Enter element at position (" << i + 1 << ", " << j + 1 << "): ";
+            cin >> matrix[i][j];
+        }
+    }
+}
+void multiplyMatrices(int m1[][100], int m2[][100], int result[][100], int a, int b, int c) {
+    for (int i = 0; i < a; ++i) {
+        for (int j = 0; j < c; ++j) {
+            result[i][j] = 0;
+        }
+    }
+
+    for (int i = 0; i < a; ++i) {
+        for (int j = 0; j < c; ++j) {
+            for (int k = 0; k < b; ++k) {
+                result[i][j] += m1[i][k] * m2[k][j];
+            }
+        }
+    }
+}
+
+int main() {
+    int a, b, c;
+    int m1[100][100], m2[100][100], result[100][100];
+    cout << "Enter the number of rows for the first matrix: "<<endl;
+    cin >> a;
+    cout << "Enter the number of columns for the first matrix "<<endl;
+    cin >> b;
+    cout << "Enter the number of columns for the second matrix "<<endl;
+    cin >> c;
+    cout << "Input elements for the first matrix:" << endl;
+    inputMatrix(m1, a, b);
+    cout << "Input elements for the second matrix:" << endl;
+    inputMatrix(m2, b, c);
+    multiplyMatrices(m1, m2, result, a, b, c);
+    
+    for (int i = 0; i < a; ++i) {
+        for (int j = 0; j < c; ++j) {
+            cout << result[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
