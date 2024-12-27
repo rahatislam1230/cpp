@@ -107,3 +107,22 @@ public:
         return reversed * sign;  // Restore the sign and return the result
     }
 };
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        // If the number is negative or ends with a 0 (except for 0 itself), it's not a palindrome
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+        
+        int reversedHalf = 0;
+        // Reverse the second half of the number
+        while (x > reversedHalf) {
+            reversedHalf = reversedHalf * 10 + x % 10; // Extract last digit and build reversed number
+            x /= 10; // Remove last digit from the original number
+        }
+        
+        // Check if the first half equals the second half (reversed), or if the number has odd digits, check the middle digit
+        return x == reversedHalf || x == reversedHalf / 10;
+    }
+};
