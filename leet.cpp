@@ -58,3 +58,24 @@ public:
         return maxLength;  // Return the maximum length of the substring without repeating characters
     }
 };
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        unordered_set<char> seen;  // To track characters in the current window
+        int maxLength = 0;          // Variable to store the maximum length
+        int start = 0;              // Start pointer for the sliding window
+
+        for (int end = 0; end < s.length(); ++end) {
+            // If the character at 'end' is in the set, shrink the window from the start
+            while (seen.count(s[end]) > 0) {
+                seen.erase(s[start]);
+                start++;  // Move the start pointer to the right
+            }
+            
+            seen.insert(s[end]);  // Add the current character to the set
+            maxLength = max(maxLength, end - start + 1);  // Update the maximum length
+        }
+
+        return maxLength;  // Return the maximum length of the substring without repeating characters
+    }
+};
