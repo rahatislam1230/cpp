@@ -511,5 +511,18 @@ int main() {
     return 0;
 }
 
-
+#include <bits/stdc++.h>
+using namespace std;
+float fib(int n){
+    if(n<2){
+        return 1;
+    }
+    return fib(n-2)+ fib(n-1);
+}
+int main() {
+   int a;
+   cin>>a;
+   cout<<"the factorial is "<<a<<"is "<<fib(a)<<endl;
+    return 0;
+}
 
