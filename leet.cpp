@@ -79,3 +79,31 @@ public:
         return maxLength;  // Return the maximum length of the substring without repeating characters
     }
 };
+class Solution {
+public:
+    int reverse(int x) {
+        int reversed = 0;
+        
+        // Edge case for INT_MIN (-2147483648) where the negation would overflow
+        if (x == INT_MIN) {
+            return 0;
+        }
+        
+        int sign = (x < 0) ? -1 : 1;  // Store the sign of x
+        x = abs(x);  // Work with the absolute value of x
+        
+        while (x > 0) {
+            int digit = x % 10;  // Get the last digit
+            x /= 10;  // Remove the last digit from x
+            
+            // Check for overflow before updating the reversed number
+            if (reversed > INT_MAX / 10 || (reversed == INT_MAX / 10 && digit > 7)) {
+                return 0;  // Return 0 if reversing would overflow
+            }
+            
+            reversed = reversed * 10 + digit;  // Append the digit to the reversed number
+        }
+        
+        return reversed * sign;  // Restore the sign and return the result
+    }
+};
