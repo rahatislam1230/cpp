@@ -220,3 +220,27 @@ public:
         return regex_match(s, pattern);
     }
 };
+class Solution {
+public:
+    int mySqrt(int x) {
+        if (x == 0) return 0;  // Special case for 0
+        
+        int left = 1, right = x, result = 0;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            long long midSquared = (long long)mid * mid;  // Use long long to avoid overflow
+            
+            if (midSquared == x) {
+                return mid;  // Exact square root found
+            } else if (midSquared < x) {
+                left = mid + 1;  // Search in the right half
+                result = mid;  // This is the best guess for now
+            } else {
+                right = mid - 1;  // Search in the left half
+            }
+        }
+        
+        return result;  // Return the largest integer whose square is <= x
+    }
+};
