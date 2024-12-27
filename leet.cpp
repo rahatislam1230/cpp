@@ -208,3 +208,15 @@ public:
         return result;
     }
 };
+#include <regex>
+
+class Solution {
+public:
+    bool isNumber(string s) {
+        // Regex pattern to match a valid number
+        regex pattern("^[+-]?((\\d+(\\.\\d*)?)|(\\.\\d+))([eE][+-]?\\d+)?$");
+        
+        // Try to match the string with the pattern
+        return regex_match(s, pattern);
+    }
+};
