@@ -580,3 +580,12 @@ int main() {
    cout<<"the volume is "<<volume(3,3,3);
     return 0;
 }
+#include <bits/stdc++.h>
+using namespace std;
+int volume(int l,int h,int b){
+    return(l*h*b);
+}
+int main() {
+   cout<<"the volume is "<<volume(3,3,3);
+    return 0;
+}
