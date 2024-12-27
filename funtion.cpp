@@ -458,3 +458,15 @@ int main() {
 
     return 0;
 }
+#include <bits/stdc++.h>
+using namespace std;
+inline int product(int a,int b){
+    return a*b;
+}
+int main() {
+    int x,y;
+    cin>>x>>y;
+    cout<<"the product of x & y is :"<<product(x,y)<<endl;
+    return 0;
+
+}
