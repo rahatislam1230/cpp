@@ -484,4 +484,17 @@ int main() {
     return 0;
 
 }
+#include <bits/stdc++.h>
+using namespace std;
+float recviecdMoney(int currentMoney,float faction=1.04){
+    return currentMoney*faction;
+}
+int main() {
+   int money=1000000;
+    cout<<"your money is :"<<money<<"dollars"<<recviecdMoney(money)<<endl;
+    cout<<"For vip money is :"<<money<<"dollars"<<recviecdMoney(money,1.1)<<endl;
+    return 0;
+
+}
+
 
