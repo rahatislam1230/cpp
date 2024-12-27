@@ -571,3 +571,12 @@ int main() {
    cout<<"the volume is "<<volume(3,3,3);
     return 0;
 }
+#include <bits/stdc++.h>
+using namespace std;
+int volume(int a){
+    return(a*a*a);
+}
+int main() {
+   cout<<"the volume is "<<volume(3,3,3);
+    return 0;
+}
