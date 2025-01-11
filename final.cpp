@@ -28,3 +28,22 @@ int main() {
 
     return 0;
 }
+#include <bits/stdc++.h>
+using namespace std;
+void callbyfuntion(int a){
+    a=20;
+}
+void callbyrefernce(int&b){
+    b=30;
+}
+int main(){
+    int x=10;
+    int y=15;
+    cout<<x<<y<<endl;
+    callbyfuntion(x);
+    callbyrefernce(y);
+    cout<<x<<y<<endl;
+    return 0;
+    
+}
+
