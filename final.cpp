@@ -47,3 +47,72 @@ int main(){
     
 }
 
+#include <bits/stdc++.h>
+using namespace std;
+struct studnet{
+    string name;
+    int age;
+    float cga;
+
+};
+int main() {
+    int n;
+    cout << "number of student?" << endl;
+    cin >> n;
+    studnet studnts[n];
+    for (int i = 0; i < n; ++i) {
+        cout <<"Enter the name [" << i << "]" << endl;
+        cin >> studnts[i].name;
+        cout << "Enter the age [" << i << "]" << endl;
+        cin >> studnts[i].age;
+        cout << "Enter the cpga [" << i << "]" << endl;
+        cin >> studnts[i].cga;
+    }
+    for (int i = 0; i < n; ++i) {
+        cout <<studnts[i].name;
+        cout <<studnts[i].age;
+        cout <<studnts[i].cga;
+    }
+
+
+}
+#include <bits/stdc++.h>
+using namespace std;
+class teacher {
+private:
+    double salary;
+public:
+    string name;
+    string dep;
+    string subject;
+
+    void changedept(string newdept) {
+        dep = newdept;
+    }
+
+    void setsalary(double s) {
+        salary = s;
+    }
+
+    double getsalary() {
+        return salary;
+    }
+};
+
+int main() {
+    teacher t1;
+
+    // Setting values
+    t1.name = "rahat";
+    t1.dep = "cse";
+    t1.subject = "c++";
+    t1.setsalary(25000);
+
+    cout << t1.name << endl;
+    cout << t1.dep << endl;
+    cout << t1.subject << endl;
+    cout << t1.getsalary() << endl;
+
+    return 0;
+}
+
