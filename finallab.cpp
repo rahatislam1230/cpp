@@ -133,3 +133,62 @@ int main(){
     cout<<"Total value of stock:"<<totalvalue<<endl;
 
 }
+#include <iostream>
+using namespace std;
+class Student{
+public:
+    string name;
+    int rolno;
+    float marks[3];
+};
+void detailsOfStdeunt(Student &item){
+    cout<<"Enter the number of the student:";
+    cin>>item.name;
+    cout<<"Enter the roll number of the student: ";
+    cin>>item.rolno;
+    for(int i=0;i<3;++i){
+        cout<<"Enter the marks of subject ["<<i<<"]:";
+        cin>>item.marks[i];
+    }
+}
+
+void Display(Student &item, int &total){
+    cout<<"Name of the student is: "<<item.name<<endl;
+    cout<<"student's name is: "<<item.rolno<<endl;
+    total=0;
+    for(int i=0;i<3;++i){
+        cout<<"the marks of ["<<i<<"] : "<<item.marks[i]<<endl;
+        total=item.marks[i];
+    }
+}
+
+float Calcutor(int total){
+    return float(total)/3;
+
+}
+void FailorPass(Student &item,float average){
+    bool passed=true;
+    for (int i=0;i<3;++i){
+        if(item.marks[i]<40){
+            passed =false;
+            break;
+        }
+    }
+    if(passed){
+        cout<<"passed"<<endl;
+    }else{
+        cout<<"fail"<<endl;
+    }
+    cout<<"average marks:"<<average<<endl;
+
+}
+int main(){
+    Student s;
+    int total;
+    float average;
+    detailsOfStdeunt(s);
+    Display(s,total);
+    average=Calcutor(total);
+    FailorPass(s,average);
+}
+
