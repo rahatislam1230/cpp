@@ -87,3 +87,49 @@ int main(){
 
 }
 
+#include <iostream>
+using namespace std;
+class Book{
+public:
+    string title;
+    string name;
+    int number;
+    int price;
+};
+    void bookDetails(Book &item){
+    cout<<"Enter the book title: ";
+    cin>>item.title;
+    cout<<"Enter the name of the author: ";
+    cin>>item.name;
+    cout<<"Enter the number of the copies:";
+    cin>>item.number;
+    cout<<"Enter the price of copy:";
+    cin>>item.price;
+}
+    void details(const Book &item){
+    cout<<"book title:"<<item.title<<endl;
+    cout<<"Author name:"<<item.name<<endl;
+    cout<<"number of copies:"<<item.number<<endl;
+    cout<<"price of copy:"<<item.price<<endl;
+}
+    float calcuate(const Book &item){
+    return item.number*item.price;
+}
+    void change(Book &item){
+    int change;
+    cout<<"Enter the change in stock :"<<endl;
+    cin>>change;
+    item.number+=change;
+    cout<<"Stock update successfully"<<endl;
+}
+
+int main(){
+    Book item;
+    bookDetails(item);
+    details(item);
+    change(item);
+    details(item);
+    float totalvalue=calcuate(item);
+    cout<<"Total value of stock:"<<totalvalue<<endl;
+
+}
