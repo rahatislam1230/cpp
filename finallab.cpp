@@ -417,3 +417,44 @@ int main(){
     rec.setdimesions(length,width);
     rec.display();
 }
+#include<iostream>
+using namespace std;
+class Student{
+private:
+    string name;
+    int roll;
+    float marks[3];
+public:
+    void studentDisplay(){
+    cout<<"Enter name of the student :";
+    cin>>name;
+    cout<<"Enter roll number of the student :";
+    cin>>roll;
+    for(int i=0;i<3;++i){
+        cin>>marks[i];
+    }
+}
+  void avagandtotal(float &total,float &average){
+      total=0;
+      for(int i=0;i<3;++i){
+        total+=marks[i];
+      }
+      average=total/3;
+  }
+  void Display(){
+      float total,average;
+      avagandtotal(total,average);
+      cout<<"roll"<<roll<<endl;
+      cout<<"name"<<name<<endl;
+      for(int i=0;i<3;++i){
+        cout<<"marks "<<marks[i]<<endl;
+      }
+      cout<<total;
+      cout<<average;
+  }
+};
+int main(){
+    Student student;
+    student.studentDisplay();
+    student.Display();
+}
