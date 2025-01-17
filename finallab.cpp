@@ -330,3 +330,50 @@ int main(){
     details(item);
     Available(item);
 }
+#include <iostream>
+using namespace std;
+class BankAccount{
+private:
+    string accountNumber;
+    string accountHolderName;
+    double balance;
+public:
+    BankAccount(string accnum,string acchold,double initalbalance){
+        accountNumber=accnum;
+        accountHolderName=acchold;
+        balance=initalbalance;
+}
+    void deposite(double amount){
+        if(amount>0){
+            balance+=amount;
+            cout<<"Amount deposited successfully"<<endl;
+        }else{
+            cout<<"Invalid deposit amount"<<endl;
+        }
+    }
+    void withdraw(double amount){
+        if(amount>0&& amount<=balance){
+            balance-=amount;
+            cout<<"Amount withdrawn successfully!"<<endl;
+        }else if(amount>balance){
+            cout<<"Insufficient balance!"<<endl;
+        }else{
+            cout<<"invalid amount"<<endl;
+        }
+    }
+    void display(){
+        cout<<"Account number: "<<accountNumber<<endl;
+        cout<<"Account holder name:"<<accountHolderName<<endl;
+        cout<<"Current balance:"<<balance<<endl;
+    }
+};
+int main(){
+    BankAccount account("165884","rahat",100000);
+    account.display();
+    account.deposite(150);
+    account.withdraw(100);
+    account.withdraw(100);
+    account.display();
+
+
+}
