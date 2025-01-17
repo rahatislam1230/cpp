@@ -288,3 +288,45 @@ int main(){
 
 }
 
+#include<iostream>
+using namespace std;
+struct Movie{
+    string name;
+    string time;
+    int price;
+    int tickets;
+};
+void movieDetails(Movie &item){
+    cout<<"Enter the name of the movie:";
+    cin>>item.name;
+    cout<<"Enter the time of the movie:";
+    cin>>item.time;
+    cout<<"Enter the price of ticket:";
+    cin>>item.price;
+    cout<<"Enter the number of ticket of available: ";
+    cin>>item.tickets;
+}
+void details(Movie &item){
+    cout<<"the name of the movie:"<<item.name<<endl;
+    cout<<"the time of the movie:"<<item.time<<endl;
+    cout<<"the price of ticket:"<<item.price<<endl;
+    cout<<"Enter the number of ticket of available: "<<item.tickets<<endl;
+}
+void Available(Movie &item){
+    int avgtickets;
+    cout<<"Enter the available ticket:"<<endl;
+    cin>>avgtickets;
+    if(avgtickets>item.tickets){
+        cout<<"Not enough tickets!"<<endl;
+    }else if(item.tickets-=avgtickets){
+        cout<<"booking successfully. Remaining tickets"<<endl;
+    }else{
+        cout<<"sold out!"<<endl;
+    }
+}
+int main(){
+    Movie item;
+    movieDetails(item);
+    details(item);
+    Available(item);
+}
