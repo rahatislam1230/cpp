@@ -320,6 +320,37 @@ int main() {
 
     return 0;
 }
+10.....
+#include<iostream>
+using namespace std;
+struct Student{
+    string name;
+    int roll;
+    float marks[3];
+};
+int main(){
+    Student student[5];
+    for(int i=0;i<5;++i){
+        cout<<"Enter the details ["<<i<<"]: "<<endl;
+        cout<<"name:";
+        cin>>student[i].name;
+        cout<<"roll number:";
+        cin>>student[i].roll;
+        for(int j=0;j<3;++j){
+            cout<<"Enter the marks:";
+            cin>>student[i].marks[j];
+        }cout<<endl;
+    }
+     for(int i=0;i<5;++i){
+        cout<<"Enter the details ["<<i<<"]: "<<endl;
+        cout<<"name:"<<student[i].name;
+        cout<<"roll number:"<<student[i].roll;
+        for(int j=0;j<3;++j){
+            cout<<"marks:"<<student[i].marks[j];
+        }
+    }
+
+}
     
     
 
