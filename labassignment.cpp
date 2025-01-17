@@ -214,3 +214,90 @@ int main(){
     rec.setdimesions(length,width);
     rec.display();
 }
+6.......
+#include <iostream>
+#include <cmath>
+using namespace std;
+bool isPrime(int num){
+    for(int i=2;i< sqrt(num);i++){
+        if(num%2==0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+}
+int main() {
+    int a,b;
+    cin>>a>>b;
+    for(int i=a;i<b;i++){
+        if(isPrime(i)==true){
+            cout<<i<<endl;
+        }
+    }
+}
+9............
+#include <iostream>
+using namespace std;
+void fib(int n){
+    int t1=0;
+    int t2=1;
+    int next_term;
+    for(int i=1;i<n;i++){
+        cout<<t1<<endl;
+        next_term= t1+t2;
+        t1=t2;
+        t2=next_term;
+    }
+    return;
+}
+int main(){
+    int n;
+    cin>>n;
+    fib(n);
+
+}
+5............
+#include <iostream>
+using namespace std;
+int fact(int n){
+    int factorial=1;
+    for(int i=2;i<n;i++){
+        factorial*=i;
+    }
+    return factorial;
+}
+int main(){
+   int n;
+   cin>>n;
+   int ans = fact(n);
+   cout<<ans<<endl;
+    return 0;
+
+}
+7.........
+#include <iostream>
+using namespace std;
+void swapRefernce(int &a,int &b ){
+    int temp = a;
+     a= b;
+     b=temp;
+
+}
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+    swapRefernce(x,y) ;
+    cout<<"the x is "<<x<<"y is "<<y<<endl;
+
+
+    return 0;
+
+
+}
+
+
+
+
+
