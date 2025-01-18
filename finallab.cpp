@@ -521,4 +521,38 @@ int main(){
 
 
 }
+#include<iostream>
+using namespace std;
+struct Book{
+    string title;
+    string author;
+    int price;
+};
+int main(){
+    int n;
+    cout<<"Enter the number of books:";
+    cin>>n;
+    Book book[n];
+    for(int i=0;i<n;++i){
+        cout<<"Title:";
+        cin>>book[i].title;
+        cout<<"author:";
+        cin>>book[i].author;
+        cout<<"Price:";
+        cin>>book[i].price;
+    }
+    cout<<"books price above 500";
+    bool found=false;
+    for(int i=0;i<n;++i){
+        if(book[i].price>500){
+            cout<<"Title:"<<book[i].title<<endl;
+            cout<<"Author:"<<book[i].author<<endl;
+            cout<<"Price:"<<book[i].price<<endl;
+            found=true;
+        }
+    }
+    if(!found){
+        cout<<"no book above 500";
+    }
+}
 
