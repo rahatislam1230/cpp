@@ -555,4 +555,58 @@ int main(){
         cout<<"no book above 500";
     }
 }
+#include<iostream>
+using namespace std;
+class Student{
+public:
+    string name;
+    int rolno;
+    float marks[3];
+};
+void detailsOfStudents(Student &item){
+    cout<<"Enter the name of student:";
+    cin>>item.name;
+    cout<<"Enter the roll number of student:";
+    cin>>item.rolno;
+    for(int i=0;i<3;++i){
+        cout<<"Enter the marks of subject ["<<i<<"]: ";
+        cin>>item.marks[i];
+    }
+}
+void Display(Student &item,int &total){
+    cout<<" Name of student:"<<item.name<<endl;
+    cout<<"Roll number of student:"<<item.rolno<<endl;
+    total=0;
+    for(int i=0;i<3;++i){
+        cout<<"Enter the marks of subject ["<<i<<"]: "<<item.marks[i]<<endl;
+        total+=item.marks[i];
+    }
+}
+float Calcutor(int total){
+    return float(total)/3;
+}
+void passORFail(Student &item,float average){
+    bool passed=true;
+    for(int i=0;i<3;++i){
+        if(item.marks[i]<40){
+            passed=false;
+            break;
+        }
+    }
+    if(passed){
+        cout<<"passed"<<endl;
+    }else{
+        cout<<"fail"<<endl;
+    }
+    cout<<"average:"<<average<<endl;
+}
+int main(){
+    Student s;
+    int total;
+    float average;
+    detailsOfStudents(s);
+    Display(s,total);
+    average=Calcutor(total);
+    passORFail(s,average);
+}
 
