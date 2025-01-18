@@ -497,4 +497,28 @@ int main(){
     cout<<"differnce :";
     display(diff);
 }
+#include<iostream>
+using namespace std;
+struct Employee{
+    int id;
+    string name;
+    double salary;
+};
+int main(){
+    Employee emplyees[3];
+    double totalsalary=0;
+    for(int i=0;i<3;++i){
+         cout<<"ID:";
+         cin>>emplyees[i].id;
+         cout<<"name:";
+         cin>>emplyees[i].name;
+         cout<<"Salary:";
+         cin>>emplyees[i].salary;
+         totalsalary+=emplyees[i].salary;
+
+    }
+    cout<<totalsalary;
+
+
+}
 
