@@ -654,3 +654,27 @@ int main(){
 
 }
 
+#include <iostream>
+using namespace std;
+struct Employee {
+    int id;
+    string name;
+    double salary;
+};
+
+int main() {
+    Employee employees[3];
+    double totalsalary = 0;
+    for (int i = 0; i < 3; ++i) {
+        cout << "ID: ";
+        cin >> employees[i].id;
+        cout << "Name: ";
+        cin >> employees[i].name;
+        cout << "Salary: ";
+        cin >> employees[i].salary;
+        totalsalary += employees[i].salary;
+    }
+    cout << "Total salary of employees: " << totalsalary << endl;
+
+    return 0;
+}
