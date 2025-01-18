@@ -716,3 +716,41 @@ int main() {
 
     return 0;
 }
+#include <iostream>
+using namespace std;
+struct Employee {
+    string name;
+    int id;
+    string designation;
+    double salary;
+};
+int main() {
+    Employee employees[5];
+    double givenSalary;
+    for (int i = 0; i < 5; ++i) {
+        cout << "Enter name: ";
+        cin >> employees[i].name;
+        cout << "Enter ID: ";
+        cin >> employees[i].id;
+        cout << "Enter designation: ";
+        cin >> employees[i].designation;
+        cout << "Enter salary: ";
+        cin >> employees[i].salary;
+        cout << endl;
+    }
+    cout << "Enter the salary threshold: ";
+    cin >> givenSalary;
+    cout << "Employees earning more than " << givenSalary << "\n";
+    for (int i = 0; i < 5; ++i) {
+        if (employees[i].salary > givenSalary) {
+            cout << "Name: " << employees[i].name << endl;
+            cout << "ID: " << employees[i].id << endl;
+            cout << "Designation: " << employees[i].designation << endl;
+            cout << "Salary: " << employees[i].salary << endl;
+            cout << endl;
+        }
+    }
+
+    return 0;
+}
+
