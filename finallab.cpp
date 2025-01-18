@@ -458,3 +458,43 @@ int main(){
     student.studentDisplay();
     student.Display();
 }
+#include<iostream>
+using namespace std;
+struct Complex{
+    double real;
+    double imaginary;
+};
+Complex addComplex(Complex &c1,Complex &c2){
+    Complex result;
+    result.real=c1.real+c2.real;
+    result.imaginary=c1.imaginary+c2.imaginary;
+    return result;
+}
+Complex subtractComplex(Complex &c1,Complex &c2){
+    Complex result;
+    result.real=c1.real-c2.real;
+    result.imaginary=c1.imaginary-c2.imaginary;
+    return result;
+}
+void display(Complex &c){
+    cout<<c.real;
+    if(c.imaginary>=0){
+        cout<<"+"<<c.imaginary<<"i"<<endl;
+    }else{
+        cout<<"-"<<c.imaginary<<"i"<<endl;
+    }
+}
+int main(){
+    Complex c1,c2,sum,diff;
+    cout<<"Enter the first complex:";
+    cin>>c1.real>>c1.imaginary;
+    cout<<"Enter the 2nd complex:";
+    cin>>c2.real>>c2.imaginary;
+    sum=addComplex(c1,c2);
+    cout<<"sum:";
+    display(sum);
+    diff=subtractComplex(c1,c2);
+    cout<<"differnce :";
+    display(diff);
+}
+
