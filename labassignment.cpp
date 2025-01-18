@@ -352,7 +352,115 @@ int main(){
 
 }
     
-    
+ 11....
+#include <iostream>
+using namespace std;
+struct Complex {
+    double real;
+    double imaginary;
+};
+Complex addComplex(Complex& c1, Complex& c2) {
+    Complex result;
+    result.real = c1.real + c2.real;
+    result.imaginary = c1.imaginary + c2.imaginary;
+    return result;
+}
+Complex subtractComplex(Complex& c1, Complex& c2) {
+    Complex result;
+    result.real = c1.real - c2.real;
+    result.imaginary = c1.imaginary - c2.imaginary;
+    return result;
+}
+void displayComplex(const Complex& c) {
+    cout << c.real;
+    if (c.imaginary >= 0) {
+        cout << " + " << c.imaginary << "i" << endl;
+    } else {
+        cout << " - " << -c.imaginary << "i" << endl;
+    }
+}
+int main() {
+    Complex c1, c2, sum, difference;
+    cout << "Enter first complex number: ";
+    cin >> c1.real >> c1.imaginary;
+    cout << "Enter second complex number: ";
+    cin >> c2.real >> c2.imaginary;
+    sum = addComplex(c1, c2);
+    difference = subtractComplex(c1, c2);
+    cout << "The sum of the two complex numbers is: ";
+    displayComplex(sum);
+    cout << "The difference of the two complex numbers is: ";
+    displayComplex(difference);
+
+}
+12......
+#include <iostream>
+using namespace std;
+
+struct Employee {
+    int id;
+    char name[50];
+    double salary;
+};
+
+int main() {
+    Employee employees[3];
+    double totalSalary = 0;
+    for (int i = 0; i < 3; i++) {
+        cout << "ID: ";
+        cin >> employees[i].id;
+        cout << "Name: ";
+        cin >> employees[i].name;
+        cout << "Salary: ";
+        cin >> employees[i].salary;
+        totalSalary += employees[i].salary;
+    }
+    cout << "The total salary of all employees is: " << totalSalary << endl;
+
+    return 0;
+}
+
+13.....
+#include <iostream>
+using namespace std;
+
+struct Book {
+    char title[50];
+    char author[50];
+    double price;
+};
+
+int main() {
+    int n;
+    cout << "Enter the number of books: ";
+    cin >> n;
+    Book books[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Title (one word): ";
+        cin >> books[i].title;
+        cout << "Author (one word): ";
+        cin >> books[i].author;
+        cout << "Price: ";
+        cin >> books[i].price;
+    }
+    cout << "Books priced above 500:";
+    bool found = false;
+    for (int i = 0; i < n; i++) {
+        if (books[i].price > 500) {
+            cout << "Title: " << books[i].title << endl;
+            cout << "Author: " << books[i].author << endl;
+            cout << "Price: " << books[i].price << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "No books priced above 500.";
+    }
+
+    return 0;
+}
+   
 
 
 
