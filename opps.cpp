@@ -783,4 +783,62 @@ int main() {
 }
     return 0;
 }
+#include<iostream>
+using namespace std;
+class Book{
+private:
+    string bookID[5];
+    string title;
+    string author;
+    int price;
+public:
+    void bookDeatils(){
+        for(int i=0;i<5;++i){
+        cout<<"enter book: ";
+        cin>>bookID[i];
+}
+        cout<<"title:";
+        cin>>title;
+        cout<<"author:";
+        cin>>author;
+        cout<<"price:";
+        cin>>price;
+
+    }
+    void details(){
+        for(int i=0;i<5;++i){
+        cout<<"price:"<<bookID[i];
+}
+        cout<<"title:"<<title<<endl;
+        cout<<"author:"<<author<<endl;
+        cout<<"price:"<<price<<endl;
+    }
+    void pricerange(){
+        int pricer;
+        cout<<"enter the book range"<<endl;
+        cin>>pricer;
+        bool flag=false;
+        for(int i=0;i<5;++i){
+        if(price<pricer){
+            cout<<"book name"<<bookID[i]<<endl;
+            cout<<"title:"<<title<<endl;
+            cout<<"author:"<<author<<endl;
+            flag=true;
+
+        }
+
+    }if(!flag){
+        cout<<"no books";
+    }
+
+}
+
+};
+int main(){
+    Book b;
+    b.bookDeatils();
+    b.details();
+    b.pricerange();
+
+}
 
