@@ -874,4 +874,44 @@ int main(){
     cout<<"differnce :";
     display(diff);
 }
+#include<iostream>
+using namespace std;
+class Book{
+private:
+    string title,author;
+    double price;
+    int stock;
+public:
+    void input(){
+        cout<<"Enter title, author,price and stock:";
+        cin>>title>>author>>price>>stock;
+    }
+    void display(){
+        cout<<"title:"<<title<<"author:"<<author<<"price:"<<price<<"stock:"<<stock;
+    }
+    bool isPriceAbove(double thdhold){
+        return price > thdhold;
+    }
+
+};
+int main(){
+    Book book[5];
+    for(int i=0;i<5;++i){
+        cout<<"enter the details of book:"<<endl;
+        book[i].input();
+    }
+    double treshold;
+    cout<<"enter the threshold:";
+    cin>>treshold;
+    cout<<"book price above :"<<treshold<<"\n";
+    bool flag= false;
+    for(auto&item : book){
+        if(item.isPriceAbove(treshold)){
+            item.display();
+            flag= true;
+        }
+    }if(!flag){
+        cout<<"no found"<<treshold<<"\n";
+    }
+}
 
