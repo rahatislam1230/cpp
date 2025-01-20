@@ -914,4 +914,45 @@ int main(){
         cout<<"no found"<<treshold<<"\n";
     }
 }
+#include<iostream>
+using namespace std;
+void inputMatrix(int mat[10][10],int r,int c){
+    cout<<"Enter the element of["<<r<<"x"<<c<<"]:\n";
+    for(int i=0;i<r;++i){
+        for(int j=0;j<c;++j){
+            cin>>mat[i][j];
+        }
+    }
+}
+    void multiplyMatric(int a[10][10],int b[10][10],int res[10][10],int r1,int c1,int c2){
+        for(int i=0;i<r1;++i){
+            for(int j=0;j<c1;++j){
+                for(int k=0;k<c2;++k){
+                    res[i][j]+=a[i][k]*b[k][j];
+                }
+            }
+        }
+    }
+    void displayMtrix(int mat[10][10],int r,int c){
+        cout<<"result:";
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;++j){
+                cout<<mat[i][j]<<" ";
+            }cout<<endl;
+        }
+}
+
+int main(){
+    int a[10][10]={},b[10][10]={},res[10][10]={};
+    int r1,c1,r2,c2;
+    cout<<"the row and col of 1st matrix";
+    cin>>r1>>c1;
+    cout<<"the row and col of 2nd matrix";
+    cin>>r2>>c2;
+    inputMatrix(a,r1,c1);
+    inputMatrix(b,r2,c2);
+    multiplyMatric(a,b,res,r1,c1,c2);
+    displayMtrix(res,r1,c2);
+
+}
 
