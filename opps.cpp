@@ -955,4 +955,75 @@ int main(){
     displayMtrix(res,r1,c2);
 
 }
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int rollno;
+    float marks[3];
+};
+
+void detailsOfStudent(Student &item) {
+    cout << "Enter the name of the student: ";
+    cin >> item.name;
+    cout << "Enter the roll number of the student: ";
+    cin >> item.rollno;
+    for (int i = 0; i < 3; ++i) {
+        cout << "Enter the marks of subject [" << i + 1 << "]: ";
+        cin >> item.marks[i];
+    }
+}
+
+void Display(Student &item, int &total) {
+    cout << "Name of the student: " << item.name << endl;
+    cout << "Roll number: " << item.rollno << endl;
+    total = 0;
+    for (int i = 0; i < 3; ++i) {
+        cout << "Marks of subject [" << i + 1 << "]: " << item.marks[i] << endl;
+        total += item.marks[i];
+    }
+}
+
+float Calculator(int total) {
+    return static_cast<float>(total) / 3;
+}
+
+void FailOrPass(Student &item, float average) {
+    bool passed = true;
+    for (int i = 0; i < 3; ++i) {
+        if (item.marks[i] < 40) {
+            passed = false;
+            break;
+        }
+    }
+    if (passed) {
+        cout << "Result: Passed" << endl;
+    } else {
+        cout << "Result: Failed" << endl;
+    }
+    cout << "Average Marks: " << average << endl;
+}
+
+int main() {
+    int numStudents;
+    cout << "Enter the number of students: ";
+    cin >> numStudents;
+
+    Student students[numStudents];
+
+    for (int i = 0; i < numStudents; ++i) {
+        cout << "\nEntering details for student " << i + 1 << ":\n";
+        detailsOfStudent(students[i]);
+
+        int total = 0;
+        Display(students[i], total);
+
+        float average = Calculator(total);
+        FailOrPass(students[i], average);
+    }
+
+    return 0;
+}
 
