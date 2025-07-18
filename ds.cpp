@@ -62,3 +62,201 @@ main(){
 
 
 }
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int n = 10, key, i = 0, found = 0;
+
+    cout << "Enter 10 elements: ";
+    while(i < n){
+        cin >> *(p + i);
+        i++;
+    }
+
+    cout << "Enter number to search: ";
+    cin >> key;
+
+    i = 0;
+    while(i < n){
+        if(*(p + i) == key){
+            cout << "Found at index: " << i << endl;
+            found = 1;
+            break;
+        }
+        i++;
+    }
+
+    if(!found)
+        cout << "Not found." << endl;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int i = 0, count = 0;
+
+    cout << "Enter 10 numbers: ";
+    while(i < 10){
+        cin >> *(p + i);
+        i++;
+    }
+
+    i = 0;
+    while(i < 10){
+        if(*(p + i) % 2 == 0)
+            count++;
+        i++;
+    }
+
+    cout << "Even numbers count: " << count << endl;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int i = 0, count = 0, target;
+
+    cout << "Enter 10 numbers: ";
+    while(i < 10){
+        cin >> *(p + i);
+        i++;
+    }
+
+    cout << "Enter number to count: ";
+    cin >> target;
+
+    i = 0;
+    while(i < 10){
+        if(*(p + i) == target)
+            count++;
+        i++;
+    }
+
+    cout << target << " appears " << count << " times." << endl;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int i = 0;
+
+    cout << "Enter 10 numbers: ";
+    while(i < 10){
+        cin >> *(p + i);
+        i++;
+    }
+
+    i = 0;
+    while(i < 10){
+        if(*(p + i) == 0)
+            *(p + i) = -1;
+        i++;
+    }
+
+    cout << "Modified array: ";
+    i = 0;
+    while(i < 10){
+        cout << *(p + i) << " ";
+        i++;
+    }
+    cout << endl;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int i = 0;
+
+    cout << "Enter 10 numbers: ";
+    while(i < 10){
+        cin >> *(p + i);
+        i++;
+    }
+
+    cout << "Positive numbers: ";
+    i = 0;
+    while(i < 10){
+        if(*(p + i) >= 0)
+            cout << *(p + i) << " ";
+        i++;
+    }
+    cout << endl;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int i = 0, temp;
+
+    cout << "Enter 10 numbers: ";
+    while(i < 10){
+        cin >> *(p + i);
+        i++;
+    }
+
+    temp = *p;
+    *p = *(p + 9);
+    *(p + 9) = temp;
+
+    cout << "After swapping first and last: ";
+    i = 0;
+    while(i < 10){
+        cout << *(p + i) << " ";
+        i++;
+    }
+    cout << endl;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int i = 0;
+
+    cout << "Enter 10 numbers: ";
+    while(i < 10){
+        cin >> *(p + i);
+        i++;
+    }
+
+    i = 0;
+    while(i < 10){
+        *(p + i) *= 2;
+        i++;
+    }
+
+    cout << "Doubled array: ";
+    i = 0;
+    while(i < 10){
+        cout << *(p + i) << " ";
+        i++;
+    }
+    cout << endl;
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10], *p = arr;
+    int i = 0, j, count = 0;
+
+    cout << "Enter 10 numbers: ";
+    while(i < 10){
+        cin >> *(p + i);
+        i++;
+    }
+
+    i = 0;
+    while(i < 10){
+        j = i + 1;
+        while(j < 10){
+            if(*(p + i) == *(p + j)){
+                count++;
+                break;
+            }
+            j++;
+        }
+        i++;
+    }
+
+    cout << "Duplicate count: " << count << endl;
+}
