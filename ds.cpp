@@ -549,3 +549,25 @@ int main() {
         cout<<arr[i]<<" ";
     }
 }
+#include<iostream>
+using namespace std;
+
+int main() {
+    int arr[6];
+    int *ptr=arr;
+    for(int i=0;i<6;i++){
+        cin>>*(ptr+i);
+    }
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5-i;j++){
+            if(*(ptr+j)>*(ptr+j+1)){
+                int temp=*(ptr+j);
+                *(ptr+j)=*(ptr+j+1);
+                *(ptr+j+1)=temp;
+            }
+        }
+    }
+    for(int i=0;i<6;i++){
+        cout<<*(ptr+i);
+    }
+}
