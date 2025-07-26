@@ -571,3 +571,35 @@ int main() {
         cout<<*(ptr+i);
     }
 }
+#include<iostream>
+using namespace std;
+
+int main() {
+    int arr[6]={2,0,9,0,0,9};
+    int *ptr=arr;
+    for(int i=0;i<6;i++){
+        if((*(ptr+i))==0){
+            int temp= *(ptr+i);
+            *(ptr+i)=1;
+            cout<<*(ptr+i);
+        }else{
+        cout<<*(ptr+i);
+        }
+    }
+}
+#include<iostream>
+using namespace std;
+
+int main() {
+    int arr[6]={2,0,9,0,0,9};
+    int *ptr=arr;
+    for(int i=0;i<6;i++){
+        if((*(ptr+i))==0){
+            int temp= *(ptr+i);
+            *(ptr+i)=-1;
+            cout<<*(ptr+i);
+        }else{
+        cout<<*(ptr+i);
+        }
+    }
+}
