@@ -485,3 +485,67 @@ int main() {
         cout<<arr[p]<<" ";
     }
 }
+#include<iostream>
+using namespace std;
+struct Student{
+    int id;
+    string name;
+    float cgpa;
+}s[5];
+int main() {
+    int x=5;
+    bool flag=false;
+    for(int i=0;i<5;i++){
+        cin>>s[i].id>>s[i].name>>s[i].cgpa;
+    }
+    for(int i=0;i<5;i++){
+       if(s[i].id==x){
+        cout<<"fount["<<i<<"]"<<" ";
+        cout<<s[i].id<<s[i].name<<s[i].cgpa;
+        flag=false;
+        break;
+       }
+    }
+    if(!flag){
+        cout<<"not found"<<" ";
+    }
+}
+#include<iostream>
+using namespace std;
+
+int main() {
+  int arr[5];
+  int *ptr=arr;
+  for(int i=0;i<5;i++){
+    cin>>*(ptr+i);
+  }
+  int maxi= *ptr;
+  for(int i=0;i<5;i++){
+    if((*(ptr+i))>maxi){
+        maxi=*(ptr+i);
+    }
+  }
+  cout<<maxi;
+}
+#include<iostream>
+using namespace std;
+void Bubble(int arr[],int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+            int temp=arr[j];
+            arr[j]=arr[j+1];
+            arr[j+1]=temp;
+        }
+    }
+}
+int main() {
+    int arr[10];
+    cout << "Enter 10 integers: ";
+    for(int i = 0; i < 10; i++) {
+        cin >> arr[i];
+    }
+    Bubble(arr,10);
+    for(int i = 0; i < 10; i++) {
+        cout<<arr[i]<<" ";
+    }
+}
