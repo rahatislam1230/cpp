@@ -136,3 +136,38 @@ int main() {
     return 0;
 }
 // no output
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+int main() {
+    char a[20] = "Hello";
+    char b[20] = "World";
+
+    // strcat
+    strcat(a,b);         // a = "HelloWorld"
+    cout << "strcat: " << a << endl;
+
+    // strcpy
+    char c[20]="RAHATT TTTT";
+    //strcpy(c, b);         // c = "World"
+    //cout << "strcpy: " << c << endl;
+
+    // strcmp
+    int cmp = strcmp(a, c); // Compare "HelloWorld" and "World"
+    cout << "strcmp: " << cmp << endl;
+
+    // strlen
+   cout << "strlen(a): " << strlen(a) << endl; // "HelloWorld" = 10 chars
+
+   // C++ string
+    string s = "Artificial";
+    cout << "length(): " << s.length() << endl;
+
+   // substr
+    cout << "substr(0, 5): " << s.substr(1, 5) << endl;
+
+    return 0;
+}
+
