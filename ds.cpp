@@ -636,3 +636,87 @@ int main() {
         cout<<odd[i]<<" ";
     }
 }
+#include<iostream>
+using namespace std;
+int main(){
+    int n=10;
+   int arr[n]={1,5,6,4,5,1,5,6,4,5};
+   for(int i=0;i<n-1;i++){
+    for(int j=0;j<n-1-i;j++){
+        if(arr[j]>arr[j+1]){
+            int temp=arr[j];
+            arr[j]=arr[j+1];
+            arr[j+1]=temp;
+        }
+    }
+   }
+   for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+   }
+}
+#include<iostream>
+using namespace std;
+int main(){
+    int n=10;
+   int arr[n]={1,5,6,4,5,1,5,6,4,5};
+   for(int i=0;i<n-1;i++){
+    int miniI=i;
+    for(int j=i+1;j<n;j++){
+        if(arr[j]<arr[miniI]){
+            miniI=j;
+        }
+        int temp=arr[i];
+        arr[i]=arr[miniI];
+        arr[miniI]=temp;
+    }
+   }
+   for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+   }
+}
+#include<iostream>
+using namespace std;
+int main(){
+     int n=10;
+     int arr[n]={1,5,6,4,5,1,5,6,4,5};
+
+    for(int i=1;i<n;i++){
+        int key=arr[i];
+        int j=i-1;
+        while(j>=0&&arr[j]>key){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=key;
+    }
+   for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+   }
+}
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n=10;
+    int arr[n]={1,5,6,4,5,1,5,6,4,5};
+    int key=10;
+   bool flag=false;
+   int low=0,high=n-1,mid=0;
+   while(low<=high){
+    mid=(low+high)/2;
+    if(arr[mid]==key){
+        cout<<"found";
+        flag=true;
+        break;
+    }else if(arr[mid]<key){
+        low=mid+1;
+    }else{
+        low=mid-1;
+    }
+
+   }
+   if(!flag){
+    cout<<"not found";
+    }
+
+}
