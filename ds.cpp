@@ -720,3 +720,52 @@ int main(){
     }
 
 }
+#include<iostream>
+using namespace std;
+struct student {
+    string name;
+    int id;
+    double cgpa;
+} *prt, *arr[2];
+int main() {
+    arr[0] = new student;
+    arr[1] = new student;
+    arr[0]->name = "rahat";
+    arr[0]->id = 20;
+    arr[0]->cgpa = 3.5;
+    arr[1]->name = "sakib";
+    arr[1]->id = 21;
+    arr[1]->cgpa = 3.8;
+    cout<< arr[0]->name << ", ID: " << arr[0]->id << ", CGPA: " << arr[0]->cgpa << endl;
+    cout<< arr[1]->name << ", ID: " << arr[1]->id << ", CGPA: " << arr[1]->cgpa << endl;
+    return 0;
+}
+#include<iostream>
+using namespace std;
+struct student {
+    struct teach {
+        string name;
+        int id;
+        double cgpa;
+    } t;
+
+    struct acc {
+        string name;
+        int id;
+        double cgpa;
+    } a;
+} *prt, *arr[2];
+int main() {
+    arr[0] = new student;
+    arr[1] = new student;
+    arr[0]->t.name = "rahat";
+    arr[0]->t.id = 20;
+    arr[0]->t.cgpa = 3.5;
+    arr[1]->a.name = "sakib";
+    arr[1]->a.id = 21;
+    arr[1]->a.cgpa = 3.8;
+    cout << "Teacher: " << arr[0]->t.name << ", ID: " << arr[0]->t.id << ", CGPA: " << arr[0]->t.cgpa << endl;
+    cout << "Accountant: " << arr[1]->a.name << ", ID: " << arr[1]->a.id << ", CGPA: " << arr[1]->a.cgpa << endl;
+    return 0;
+}
+
