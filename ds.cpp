@@ -999,3 +999,111 @@ int main(){
     bin(arr,key,n);
 }
 
+#include<iostream>
+using namespace std;
+struct Student{
+    string name;
+    int id;
+    int marks[3];
+    int total;
+};
+void Bubble(Student*arr,int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j].total<arr[j+1].total){
+                Student temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+}
+void Linear(Student* arr,int key,int n){
+    bool flag=false;
+    for(int i=0;i<n;i++){
+        if(arr[i].id==key){
+            cout<<"found"<<arr[i].name<<arr[i].total;
+            flag=true;
+            break;
+        }
+    }
+    if(!flag){
+        cout<<"not found";
+    }
+}
+int main(){
+    int n=3;
+    Student *s= new Student[n];
+    for(int i=0;i<n;i++){
+        cin>>s[i].name>>s[i].id;
+        for(int j=0;j<3;j++){
+            cin>>s[i].marks[j];
+            s[i].total+=s[i].marks[j];
+        }
+    }
+
+Bubble(s,n);
+for(int i=0;i<n;i++){
+    cout<<s[i].name<<s[i].id<<s[i].total<<" ";
+}
+int key;
+cin>>key;
+Linear(s,key,n);
+
+
+}
+#include<iostream>
+using namespace std;
+struct Product{
+    string name;
+    int id;
+    int price;
+};
+void Section(Product*arr,int n){
+    for(int i=0;i<n-1;i++){
+            int mini=i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j].price<arr[j+1].price){
+                mini=j;
+            }
+        }
+        Product temp=arr[i];
+        arr[i]=arr[mini];
+        arr[mini]=temp;
+    }
+}
+void Binary(Product*arr,int key,int n){
+            int low=0,high=n-1,mid=0;
+            bool flag=false;
+            for(int i=0;i<n;i++){
+                if(low<=high){
+                        if(arr[mid].id==key){
+                    mid=(high+low)/2;
+                    flag=true;
+cout << "Found:"<< arr[mid].name <<"ID: " << arr[mid].id << "Price: " << arr[mid].price << endl;
+                        }
+                }else if(arr[i].id<key){
+                    low=mid+1;
+                }else{
+                     high=mid-1;
+                }
+            }
+            if(!flag){
+                cout<<"not found";
+            }
+}
+int main(){
+
+    int n=4;
+    Product* arr= new Product[n];
+     for(int i = 0; i < n; i++) {
+        cin >> arr[i].name >> arr[i].id >> arr[i].price;
+    }
+    Section(arr, n);
+      for(int i = 0; i < n; i++) {
+        cout << arr[i].name << " ID: " << arr[i].id << " Price: " << arr[i].price << endl;
+    }
+    int key;
+    cin >> key;
+    Binary(arr, key, n);
+}
