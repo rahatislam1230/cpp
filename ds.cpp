@@ -1107,3 +1107,76 @@ int main(){
     cin >> key;
     Binary(arr, key, n);
 }
+#include<iostream>
+using namespace std;
+struct Address{
+    string city;
+    int zip;
+};
+struct Student{
+    string name;
+    int id;
+    int marks[3];
+    Address addr;
+    int total;
+};
+void Bubble(Student*s,int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-1;j++){
+            if(s[j].total>s[j+1].total){
+                Student temp=s[j];
+                s[j]=s[j+1];
+                s[j+1]=temp;
+            }
+        }
+    }
+}
+void Select(Student*s,int n){
+    for(int i=0;i<n-1;i++){
+        int mini=i;
+        for(int j=i+1;j<n;j++){
+            if(s[i].id<s[mini].id){
+                mini=j;
+            }
+        }
+        Student temp=s[i];
+            s[i]=s[mini];
+            s[mini]=temp;
+    }
+}
+void linner(Student* s,int n,int key){
+    for(int i=0;i<n;i++){
+        if(s[i].id==key){
+            cout<<s[i].name;
+        }
+    }
+}
+void binar(Student* s,int n,int key){
+    int low = 0, high = n - 1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (s[mid].id ==key ) {
+            cout << "Found: " << s[mid].name << endl;
+            return;
+        }
+        else if (s[mid].id < key)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+}
+void Inset(Student*s,int n){
+    for(int i=1;i<n;i++){
+        Student key=s[i];
+        int j=i-1;
+        while(j>=0&&s[j].name>key.name){
+            s[j+1]=s[j];
+            j--;
+        }
+        s[j+1]=key;
+    }
+}
+
+int main(){
+
+}
