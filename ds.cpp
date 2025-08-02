@@ -768,4 +768,110 @@ int main() {
     cout << "Accountant: " << arr[1]->a.name << ", ID: " << arr[1]->a.id << ", CGPA: " << arr[1]->a.cgpa << endl;
     return 0;
 }
+#include<iostream>
+using namespace std;
+//bubble sort
+void Bubble(int arr[],int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+}
+//selection sort
+void Section(int arr[],int n){
+    for(int i=0;i<n-1;i++){
+        int mini=i;
+        for(int j=1+i;j<n;j++){
+            if(arr[i]<arr[mini]){
+              mini=j;
+        }
+        }
+        int temp=arr[i];
+        arr[i]=arr[mini];
+        arr[mini]=temp;
+    }
+}
+// insert sort
+int Insert(int arr[],int n){
+    for(int i=1;i<n;i++){
+        int key=arr[i];
+        int j=i-1;
+        while(j>=0&&arr[j]>key){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=key;
+    }
+}
+// linear search
+void Linear(int arr[],int key,int n){
+        bool flag=false;
+        for(int i=0;i<n;i++){
+            if(arr[i]==key){
+            cout<<"found"<<" ";
+            flag=true;
+            break;
+        }
+        }
+        if(!flag){
+             cout<<"not found"<<" ";
+        }
+}
+// binary search
+void bin(int arr[],int key,int n){
+    int low=0,high=n-1,mid=0;
+    bool flag=false;
+    while(low<=high){
+            mid=(high+low)/2;
+        if(arr[mid]==key){
+            cout<<"found"<<" ";
+            flag=true;
+            break;
+        }else if(arr[mid]<key){
+            low=mid+1;
+        }else{
+            high =mid-1;
+        }
+    }
+    if(!flag){
+             cout<<"not found"<<" ";
+        }
+}
+//insert sort
+void ins(int arr[],int n){
+    for(int i=1;i<n;i++){
+        int key=arr[i];
+        int j=i-1;
+        while(j>=0&&arr[j]>key){
+            arr[j+1]=arr[i];
+            j--;
+        }
+        arr[j+1]=key;
+    }
+}
+
+int main(){
+    int n=5;
+    int arr[n]={1,6,5,8,5};
+    Bubble(arr,n);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    Section(arr,n);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    Insert(arr,n);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    int key=7;
+    Linear(arr,key,n);
+    bin(arr,key,n);
+}
 
