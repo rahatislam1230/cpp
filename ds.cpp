@@ -1176,6 +1176,133 @@ void Inset(Student*s,int n){
         s[j+1]=key;
     }
 }
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
+};
+
+
+void insertV(Node*& head, int val) {
+    Node* newNode = new Node(val);
+    if (head == nullptr) {
+        head = newNode;
+        return;
+    }
+    Node* temp = head;
+    while (temp->next != nullptr)
+        temp = temp->next;
+    temp->next = newNode;
+}
+
+
+void print(Node* head) {
+    Node* temp = head;
+    while (temp != nullptr) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+
+void Bubble(Node* head, int n) {
+    if (!head) return;
+    for (int i = 0; i < n - 1; i++) {
+        Node* cur = head;
+        Node* next = head->next;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (cur->data > next->data) {
+                int temp = cur->data;
+                cur->data = next->data;
+                next->data = temp;
+            }
+            cur = cur->next;
+            next = next->next;
+        }
+    }
+}
+
+void Select(Node* head, int n) {
+    for (Node* i = head; i != nullptr; i = i->next) {
+        Node* minNode = i;
+        for (Node* j = i->next; j != nullptr; j = j->next) {
+            if (j->data < minNode->data)
+                minNode = j;
+        }
+        if (minNode != i) {
+            int temp = i->data;
+            i->data = minNode->data;
+            minNode->data = temp;
+        }
+    }
+}
+
+
+void linner(Node* head, int n, int key) {
+    Node* temp = head;
+    while (temp != nullptr) {
+        if (temp->data == key) {
+            cout << temp->data << endl;
+            return;
+        }
+        temp = temp->next;
+    }
+    cout << "Not found";
+}
+
+
+void Inset(Node* head, int n) {
+    if (!head) return;
+    Node* i = head->next;
+    while (i != nullptr) {
+        int key = i->data;
+        Node* j = head;
+        while (j != i && j->data <= key)
+            j = j->next;
+        if (j != i) {
+            Node* tempNode = i;
+            while (tempNode != j) {
+                tempNode->data = tempNode->data;
+                tempNode = tempNode->next;
+            }
+            i->data = key;
+        }
+        i = i->next;
+    }
+}
+
+int main() {
+    Node* head = nullptr;
+
+    insertV(head, 30);
+    insertV(head, 10);
+    insertV(head, 20);
+    insertV(head, 40);
+
+    print(head);
+
+    Bubble(head, 4);
+    print(head);
+
+    Select(head, 4);
+    print(head);
+
+
+    linner(head, 4, 20);
+
+    Inset(head, 4);
+    print(head);
+
+    return 0;
+}
 
 int main(){
 
