@@ -1307,3 +1307,71 @@ int main() {
 int main(){
 
 }
+#include <iostream>
+using namespace std;
+
+class node {
+public:
+    int data;
+    node* next;
+    node(int val) {
+        data = val;
+        next = nullptr;
+    }
+};
+
+class linklist {
+private:
+    node* head;
+public:
+    linklist() {
+        head = nullptr;
+    }
+
+    // correct add at END
+    void add(int val) {
+        node* newnode = new node(val);
+        if (head == nullptr) {   
+            head = newnode;
+            return;
+        }
+        node* temp = head;        
+        while (temp->next != nullptr) { 
+            temp = temp->next;
+        }
+        temp->next = newnode;     
+    }
+
+    bool Search(int key) {
+        node* temp = head;
+        while (temp != nullptr) {
+            if (temp->data == key) return true;
+            temp = temp->next;
+        }
+        return false;
+    }
+
+    void display() {
+        node* temp = head;
+        while (temp != nullptr) {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        }
+        cout << "NULL\n";
+    }
+};
+
+int main() {
+    linklist l;
+    
+    l.add(5);
+    l.add(2);
+    l.add(9);
+
+    l.display();
+  
+
+    return 0;
+}
+
+
